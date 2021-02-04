@@ -9,13 +9,13 @@
 }
 
 .App-logo {
+  cursor: pointer;
   height: 40vmin;
-  pointer-events: none;
   animation: App-logo-spin infinite 20s linear;
 }
 
 .App-Center:hover {
-  animation: shake 0.5s infinite;
+  animation: shake infinite 0.5s;
 }
 
 @keyframes App-logo-spin {

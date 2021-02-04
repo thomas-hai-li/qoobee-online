@@ -3,8 +3,6 @@ import PictureScroller from '../PictureScroller/PictureScroller';
 import shuffle from 'shuffle-array';
 import './App.css';
 
-const logo = require('../../img/logo.png');
-
 const pics = shuffle([
   require('../../img/a.webp'),
   require('../../img/b.png'),
