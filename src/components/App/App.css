@@ -15,7 +15,7 @@
 }
 
 .App-Center:hover {
-  animation: shake infinite 0.5s;
+  animation: shake 0.5s;
 }
 
 @keyframes App-logo-spin {
