@@ -13,6 +13,7 @@
     "react-responsive": "^8.2.0",
     "react-scripts": "4.0.2",
     "shuffle-array": "^1.0.1",
+    "use-sound": "^2.0.1",
     "web-vitals": "^1.1.0"
   },
   "scripts": {

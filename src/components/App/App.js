@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import PictureScroller from '../PictureScroller/PictureScroller';
 import shuffle from 'shuffle-array';
+import useSound from 'use-sound';
+import qoobeeSound from '../../sounds/qoob.mp3';
 import './App.css';
 
 const pics = shuffle([
@@ -24,6 +26,7 @@ const pics = shuffle([
 
 function App() {
   const [ spotlight, setSpotlight ] = useState(pics[Math.floor(Math.random() * pics.length)].default);
+  const [ playQoobee ] = useSound(qoobeeSound, { volume: 0.25 });
 
   const firstHalf = pics.slice(0, pics.length / 2);
   const secondHalf = pics.slice(pics.length / 2);
@@ -32,7 +35,7 @@ function App() {
     <div className="App">
       <PictureScroller pics={firstHalf} setSpotlight={setSpotlight} />
       <div className="App-Center">
-        <img src={spotlight} className="App-logo" alt="logo" />
+        <img src={spotlight} className="App-logo" alt="logo" onClick={playQoobee} />
         <p>
           <code>qoobee.online</code>
         </p>
