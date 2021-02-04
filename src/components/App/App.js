@@ -39,6 +39,8 @@ const pics = shuffle([
 
 function App() {
   const [ spotlight, setSpotlight ] = useState(pics[Math.floor(Math.random() * pics.length)].default);
+  const [ wobble, setWobble ] = useState(0);
+
   const [ playQoob0 ] = useSound(sounds[0].default, { volume: 0.25 });
   const [ playQoob1 ] = useSound(sounds[1].default, { volume: 0.25 });
   const [ playQoob2 ] = useSound(sounds[2].default, { volume: 0.25 });
@@ -67,13 +69,14 @@ function App() {
   const secondHalf = pics.slice(pics.length / 2);
 
   const handleClick = () => {
+    setWobble(1);
     playSounds[Math.floor(Math.random() * playSounds.length)]();
   };
 
   return (
     <div className="App">
       <PictureScroller pics={firstHalf} setSpotlight={setSpotlight} />
-      <div className="App-Center">
+      <div className="App-Center" onAnimationEnd={() => setWobble(0)} wobble={wobble}>
         <img src={spotlight} className="App-logo" alt="logo" onClick={handleClick} />
         <p>
           <code>qoobee.online</code>
